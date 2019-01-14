@@ -1,0 +1,31 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Costs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let item of (unitList$$ | async)"
+      [routerLink]="['/units/unit', item.id]"
+    >
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.age }}</td>
+      <td>
+        <span *ngIf="item.cost?.Wood" style="margin-right:10px;">
+          Wood:{{ item.cost?.Wood || '-' }}</span
+        >
+        <span *ngIf="item.cost?.Gold" style="margin-right:10px;"
+          >Gold: {{ item.cost?.Gold || '-' }}</span
+        >
+        <span *ngIf="item.cost?.Food" style="margin-right:10px;"
+          >Food: {{ item.cost?.Food || '-' }}</span
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,35 @@
+.ages {
+  margin-bottom: 20px;
+  button {
+    margin-top: 10px;
+    border: 1px solid black;
+    margin-left: 2px;
+    &:hover {
+      background-color: rgb(28, 75, 75);
+      color: rgb(255, 255, 255);
+      border: none;
+    }
+  }
+  button.selected {
+    background-color: rgb(28, 75, 75);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(28, 75, 75);
+  }
+}
+
+.costs {
+  .cost-item {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    .cost-selection {
+      display: flex;
+      align-items: center;
+      max-width: 25%;
+      margin-right: 70px;
+    }
+    ng5-slider {
+      max-width: 40%;
+    }
+  }
+}

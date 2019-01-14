@@ -1,0 +1,54 @@
+<div class="unit-detail" *ngIf="show">
+  <table class="table table-striped table-dark">
+    <tbody>
+      <tr>
+        <td>ID:</td>
+        <td>{{ unitDetail.id }}</td>
+      </tr>
+      <tr>
+        <td>NAME:</td>
+        <td>{{ unitDetail.name }}</td>
+      </tr>
+      <tr>
+        <td>Description:</td>
+        <td>{{ unitDetail.description }}</td>
+      </tr>
+      <tr>
+        <td>Min Required Age:</td>
+        <td>{{ unitDetail.age }}</td>
+      </tr>
+      <tr>
+        <td>Wood Cost</td>
+        <td>{{ unitDetail.cost.Wood ? unitDetail.cost.Wood : '-' }}</td>
+      </tr>
+      <tr>
+        <td>Gold Cost</td>
+        <td>{{ unitDetail.cost.Gold ? unitDetail.cost.Gold : '-' }}</td>
+      </tr>
+      <tr>
+        <td>Food Cost</td>
+        <td>{{ unitDetail.cost.Food ? unitDetail.cost.Food : '-' }}</td>
+      </tr>
+      <tr>
+        <td>Build Time</td>
+        <td>{{ unitDetail.build_time }}</td>
+      </tr>
+      <tr>
+        <td>Reload Time</td>
+        <td>{{ unitDetail.reload_time }}</td>
+      </tr>
+      <tr>
+        <td>Hit Points</td>
+        <td>{{ unitDetail.hit_points }}</td>
+      </tr>
+      <tr>
+        <td>Attack</td>
+        <td>{{ unitDetail.attack }}</td>
+      </tr>
+      <tr>
+        <td>Accuary</td>
+        <td>{{ unitDetail.accuracy }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

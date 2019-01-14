@@ -1,0 +1,105 @@
+<div class="card">
+  <div class="card-body">
+    <div class="ages">
+      <h3>Ages</h3>
+      <button
+        class="btn btn-default"
+        (click)="selectAge('All')"
+        [ngClass]="{ selected: (selectedAgeFilter$$ | async) === 'All' }"
+      >
+        All
+      </button>
+      <button
+        class="btn btn-default"
+        (click)="selectAge('Dark')"
+        [ngClass]="{ selected: (selectedAgeFilter$$ | async) === 'Dark' }"
+      >
+        Dark
+      </button>
+      <button
+        class="btn btn-default"
+        (click)="selectAge('Feudal')"
+        [ngClass]="{ selected: (selectedAgeFilter$$ | async) === 'Feudal' }"
+      >
+        Feudal
+      </button>
+      <button
+        class="btn btn-default"
+        (click)="selectAge('Castle')"
+        [ngClass]="{ selected: (selectedAgeFilter$$ | async) === 'Castle' }"
+      >
+        Castle
+      </button>
+      <button
+        class="btn btn-default"
+        (click)="selectAge('Imperial')"
+        [ngClass]="{ selected: (selectedAgeFilter$$ | async) === 'Imperial' }"
+      >
+        Imperial
+      </button>
+    </div>
+    <div class="costs">
+      <h3>Costs</h3>
+      <div class="cost-item">
+        <div class="cost-selection">
+          <input
+            type="checkbox"
+            name="wood"
+            id="wood"
+            class="css-checkbox"
+            [checked]="costWood.selected"
+            (change)="checkedWood($event.target.checked)"
+          /><label for="wood" class="css-label">Wood</label>
+        </div>
+        <ng5-slider
+          *ngIf="costWood.selected"
+          [(value)]="costWood.value"
+          [(highValue)]="costWood.maxValue"
+          [options]="options"
+          (valueChange)="setWoodCost()"
+          (highValueChange)="setWoodCost()"
+        ></ng5-slider>
+      </div>
+      <div class="cost-item">
+        <div class="cost-selection">
+          <input
+            type="checkbox"
+            name="food"
+            id="food"
+            class="css-checkbox"
+            [checked]="costFood.selected"
+            (change)="checkedFood($event.target.checked)"
+          /><label for="food" class="css-label">Food</label>
+        </div>
+        <ng5-slider
+          *ngIf="costFood.selected"
+          [(value)]="costFood.value"
+          [options]="options"
+          [(highValue)]="costFood.maxValue"
+          (valueChange)="setFoodCost()"
+          (highValueChange)="setFoodCost()"
+        ></ng5-slider>
+      </div>
+      <div class="cost-item">
+        <div class="cost-selection">
+          <input
+            type="checkbox"
+            name="gold"
+            id="gold"
+            class="css-checkbox"
+            [checked]="costGold.selected"
+            (change)="checkedGold($event.target.checked)"
+          /><label for="gold" class="css-label">Gold</label>
+        </div>
+        <ng5-slider
+          *ngIf="costGold.selected"
+          [(value)]="costGold.value"
+          [options]="options"
+          [(highValue)]="costGold.maxValue"
+          (valueChange)="setGoldCost()"
+          (highValueChange)="setGoldCost()"
+        ></ng5-slider>
+      </div>
+    </div>
+  </div>
+</div>
